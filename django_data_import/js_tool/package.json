@@ -1,0 +1,16 @@
+{
+  "name": "js_tool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+   "tailwind-watch": "tailwindcss -i ../data_import/static/css/input.css -o ../data_import/static/css/output.css --watch",
+   "tailwind-build": "tailwindcss -i ../data_import/static/css/input.css -o ../data_import/static/css/output.css --minify"
+  },
+  "keywords": [],
+  "author": "Talismar",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  }
+}

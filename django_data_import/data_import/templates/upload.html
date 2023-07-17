@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block page_title %}Upload File{% endblock page_title %}
+
+
+{% block content %}
+
+<h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Make your <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">Upload</mark> Here</h1>
+<p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+  Upload a valid file</p>
+
+<form 
+    method="POST" 
+    enctype="multipart/form-data" 
+    class="max-w-[480px] p-4 flex flex-col mx-auto justify-center gap-4 bg-slate-50">
+  {% csrf_token %}
+  {% if messages %}
+    {% for message in messages %}
+        <div class="{% if message.tags == 'success' %}bg-green-500 border-green-600 {% else %}bg-red-500 border-red-600 {% endif %} border-2 px-4 py-1 text-white font-bold">
+            {{ message|safe }}
+        </div>
+    {% endfor %}
+  {% endif %}
+
+    <label for="file" class="space-y-4">
+
+      
+      <span>Upload file</span>
+      <input type="file" name="file" id="file" class="block w-full text-sm text-slate-500
+      file:mr-4 file:py-2 file:px-4
+      file:rounded-full file:border-0
+      file:text-sm file:font-semibold
+      file:bg-blue-50 file:text-blue-700
+      hover:file:bg-blue-100 
+    "/>
+    </label>
+
+    <button class="bg-red-600 p-4 rounded-lg font-bold text-white text-lg">Send</button>
+  </form>
+{% endblock content %}
+

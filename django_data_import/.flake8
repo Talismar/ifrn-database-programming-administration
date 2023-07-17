@@ -1,0 +1,4 @@
+[flake8]
+ignore = F401
+
+per-file-ignores = config/settings.py:E501
